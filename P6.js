@@ -35,7 +35,7 @@ console.log(cities);
 //       OR download other images or create your own icons
 // - (6) come up with your own addition / adjustment
 //please use this key for weather API
-const API_KEY = "79a1c99289f3c22ccadc11976a0a8241"
+const API_KEY = "e18b349af4a79cc43344c92f3ed9e172"
 
 // ONE
 // select HTML elements for the form (zipcode & button)
