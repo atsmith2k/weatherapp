@@ -102,8 +102,8 @@ async function getCityWeather(cityId) {
                     <p>Conditions: ${json.weather[0].description}</p>`;
         info.classList.add("weather-desc");
         info.innerHTML = html;
-        var fahr = document.getElementById('#fahr');
-        var celsius = document.getElementById('#cel');
+        var fahr = document.querySelector('#fahr');
+        var celsius = document.querySelector('#cel');
 
         fahr.addEventListener("click", e => {
             celsius.checked = false;
