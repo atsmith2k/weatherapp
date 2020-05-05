@@ -106,7 +106,7 @@ async function getCityWeather(cityId) {
         var celsius = document.querySelector('#cel');
 
         fahr.addEventListener("click", e => {
-            celsius.classList.toggle("checked");
+            //celsius.classList.toggle("checked");
             var html = `<p>Forecast for ${json.name}.</p>
                             <p>Humidity is at ${json.main.humidity}%</p>
                             <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F &nbsp;
@@ -121,7 +121,7 @@ async function getCityWeather(cityId) {
         });
 
         celsius.addEventListener("click", e => {
-            fahr.classList.toggle("checked");
+            //fahr.classList.toggle("checked");
             var html = `<p>Forecast for ${json.name}.</p>
                             <p>Humidity is at ${json.main.humidity}%</p>
                             <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C &nbsp;
