@@ -109,6 +109,39 @@ async function getCityWeather(cityId) {
 
 }
 
+var fahr = document.getElementById('#F');
+var celsius = document.getElementById('#C');
+
+fahr.addEventListener("click", e => {
+    celsius.checked = false;
+    var html = `<p>Forecast for ${json.name}.</p>
+                    <p>Humidity is at ${json.main.humidity}%</p>
+                    <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F &nbsp;
+                    <input type="radio" id="F" name="fahr" value="°F" checked="true">
+                    <label for="fahr">°F</label>
+                    <input type="radio" id="C" name="cel" value="°C">
+                    <label for="cel">°C</label>
+                    </p>
+                    <p>Conditions: ${json.weather[0].description}</p>`;
+        info.classList.add("weather-desc");
+        info.innerHTML = html;
+});
+
+celsius.addEventListener("click", e => {
+    fahr.checked = false;
+    var html = `<p>Forecast for ${json.name}.</p>
+                    <p>Humidity is at ${json.main.humidity}%</p>
+                    <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C &nbsp;
+                    <input type="radio" id="F" name="fahr" value="°F" >
+                    <label for="fahr">°F</label>
+                    <input type="radio" id="C" name="cel" value="°C" checked="true">
+                    <label for="cel">°C</label>
+                    </p>
+                    <p>Conditions: ${json.weather[0].description}</p>`;
+        info.classList.add("weather-desc");
+        info.innerHTML = html;
+});
+
 function cityValidator(cityName) {
     
     //console.log(thisCity.name);
