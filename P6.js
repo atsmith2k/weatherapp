@@ -113,7 +113,7 @@ async function getCityWeather(cityId) {
                         <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
                         <p>Conditions: ${json.weather[0].description}</p>`;
             info.classList.add("weather-desc");
-            info.innerHTML = html;
+            //info.innerHTML = html;
             info.insertAdjacentElement("afterbegin", html2);
         });
 
@@ -124,7 +124,7 @@ async function getCityWeather(cityId) {
                         <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C </p>
                         <p>Conditions: ${json.weather[0].description}</p>`;
             info.classList.add("weather-desc");
-            info.innerHTML = html;
+            //info.innerHTML = html;
             info.insertAdjacentElement("afterbegin", html3);
         });
     } else {
