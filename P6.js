@@ -130,9 +130,7 @@ btn.addEventListener("click", e => {
 
 cityBtn.addEventListener("click", e => {
 	if(city.value != "") {
-		console.log(city.value);
-		var thisCity = cities.find(c => c.name.toLowerCase === city.value.toLowerCase);
-		console.log(thisCity);
+		cityValidator(city.value);S
 	}
 });
 
