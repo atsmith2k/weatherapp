@@ -107,21 +107,21 @@ async function getCityWeather(cityId) {
         fahr.addEventListener("click", e => {
             //celsius.classList.toggle("checked");
             var html = `<p>Forecast for ${json.name}.</p>
-                            <p>Humidity is at ${json.main.humidity}%</p>
-                            <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
-                            <p>Conditions: ${json.weather[0].description}</p>`;
-                info.classList.add("weather-desc");
-                fahr.insertAdjacentElement("before", html);
+                        <p>Humidity is at ${json.main.humidity}%</p>
+                        <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
+                        <p>Conditions: ${json.weather[0].description}</p>`;
+            info.classList.add("weather-desc");
+            fahr.insertAdjacentElement("beforebegin", html);
         });
 
         celsius.addEventListener("click", e => {
             //fahr.classList.toggle("checked");
             var html = `<p>Forecast for ${json.name}.</p>
-                            <p>Humidity is at ${json.main.humidity}%</p>
-                            <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C </p>
-                            <p>Conditions: ${json.weather[0].description}</p>`;
-                info.classList.add("weather-desc");
-                fahr.insertAdjacentElement("before", html);
+                        <p>Humidity is at ${json.main.humidity}%</p>
+                        <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C </p>
+                        <p>Conditions: ${json.weather[0].description}</p>`;
+            info.classList.add("weather-desc");
+            fahr.insertAdjacentElement("beforebegin", html);
         });
     } else {
         error.innerHTML = "Something went wrong when fetching data!";
