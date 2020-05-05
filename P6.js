@@ -105,7 +105,8 @@ async function getCityWeather(cityId) {
 }
 
 function cityValidator(cityName) {
-    var thisCity = cities.find(c => c.name.toLowerCase === city.value.toLowerCase);
+    var thisCity = cities.find( e => e.name === cityName);
+    console.log(thisCity);
     if(thisCity === null) {
         error.innerHTML = "Invalid city name!";
     } else {
