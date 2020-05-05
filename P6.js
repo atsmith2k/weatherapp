@@ -101,7 +101,7 @@ async function getCityWeather(cityId) {
                         <label for="cel">°C</label></div>`;
         info.classList.add("weather-desc");
         info.innerHTML = html;
-        info.insertAdjacentElement("afterend", buttons);
+        document.querySelector(".weather-info").insertAdjacentElement("beforeend", buttons);
         var fahr = document.querySelector('#fahr');
         var celsius = document.querySelector('#cel');
 
