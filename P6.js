@@ -93,7 +93,12 @@ async function getCityWeather(cityId) {
         //pulls the data from the json and parses into a readable context
         var html = `<p>Forecast for ${json.name}.</p>
                     <p>Humidity is at ${json.main.humidity}%</p>
-                    <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
+                    <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F &nbsp;
+                    <input type="radio" id="F" name="fahr" value="°F">
+                    <label for="fahr">°F</label>
+                    <input type="radio" id="C" name="cel" value="°C">
+                    <label for="cel">°C</label>
+                    </p>
                     <p>Conditions: ${json.weather[0].description}</p>`;
         info.classList.add("weather-desc");
         info.innerHTML = html;
