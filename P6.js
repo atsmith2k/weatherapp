@@ -94,13 +94,14 @@ async function getCityWeather(cityId) {
         var html = `<p>Forecast for ${json.name}.</p>
                     <p>Humidity is at ${json.main.humidity}%</p>
                     <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
-                    <p>Conditions: ${json.weather[0].description}</p><br>
-                    <input type="radio" id="fahr" name="temp" value="°F" checked="true">
-                    <label for="fahr">°F</label>
-                    <input type="radio" id="cel" name="temp" value="°C">
-                    <label for="cel">°C</label>`;
+                    <p>Conditions: ${json.weather[0].description}</p><br>`;
+        var buttons = `<input type="radio" id="fahr" name="temp" value="°F" checked="true">
+                        <label for="fahr">°F</label>
+                        <input type="radio" id="cel" name="temp" value="°C">
+                        <label for="cel">°C</label>`;
         info.classList.add("weather-desc");
         info.innerHTML = html;
+        info.insertAdjacentElement("afterend", buttons);
         var fahr = document.querySelector('#fahr');
         var celsius = document.querySelector('#cel');
 
@@ -111,7 +112,8 @@ async function getCityWeather(cityId) {
                         <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
                         <p>Conditions: ${json.weather[0].description}</p>`;
             info.classList.add("weather-desc");
-            fahr.insertAdjacentElement("beforebegin", html2);
+            info.innerHTML = html;
+            //fahr.insertAdjacentElement("beforebegin", html2);
         });
 
         celsius.addEventListener("click", e => {
@@ -121,7 +123,8 @@ async function getCityWeather(cityId) {
                         <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C </p>
                         <p>Conditions: ${json.weather[0].description}</p>`;
             info.classList.add("weather-desc");
-            fahr.insertAdjacentElement("beforebegin", html3);
+            info.innerHTML = html;
+            //fahr.insertAdjacentElement("beforebegin", html3);
         });
     } else {
         error.innerHTML = "Something went wrong when fetching data!";
