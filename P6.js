@@ -130,7 +130,7 @@ btn.addEventListener("click", e => {
 
 cityBtn.addEventListener("click", e => {
 	if(city.value != "") {
-		cityValidator(city.value);S
+		cityValidator(city.value);
 	}
 });
 
