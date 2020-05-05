@@ -6,8 +6,8 @@
 
 body {
     height: 100vh;
-    background: #D6DBDF;
-    color: #dcdcdc;
+    background: #c2d6d6;
+    color: #a3c2c2;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .weather-container {
-    background: #ee6e73;
+    background: #3399ff;
     border: 2px solid black;
     height: 525px;
     width: 80%;
