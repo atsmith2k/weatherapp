@@ -105,11 +105,12 @@ async function getCityWeather(cityId) {
 }
 
 function cityValidator(cityName) {
-    var thisCity = cities.find( e => e.name.toLowerCase() === cityName.toLowerCase());
-    console.log(thisCity.name);
-    if(thisCity === null) {
+    
+    //console.log(thisCity.name);
+    if(!cities.some(e => e.name.toLowerCase() === cityName.toLowerCase())) {
         error.innerHTML = "Invalid city name!";
     } else {
+        var thisCity = cities.find( e => e.name.toLowerCase() === cityName.toLowerCase());
         getCityWeather(thisCity.id);
     }
 }
