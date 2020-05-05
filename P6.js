@@ -85,7 +85,7 @@ async function getWeather(zip) {
 }
 
 async function getCityWeather(cityId) {
-    const apiReturn = await fetch(`http://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${API_KEY}`);
+    const apiReturn = await fetch(`http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${API_KEY}`);
     if(apiReturn.ok) {
         error.innerHTML = "";
         json = await apiReturn.json();
