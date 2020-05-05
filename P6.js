@@ -106,22 +106,22 @@ async function getCityWeather(cityId) {
 
         fahr.addEventListener("click", e => {
             //celsius.classList.toggle("checked");
-            var html = `<p>Forecast for ${json.name}.</p>
+            var html2 = `<p>Forecast for ${json.name}.</p>
                         <p>Humidity is at ${json.main.humidity}%</p>
                         <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
                         <p>Conditions: ${json.weather[0].description}</p>`;
             info.classList.add("weather-desc");
-            fahr.insertAdjacentElement("beforebegin", html);
+            fahr.insertAdjacentElement("beforebegin", html2);
         });
 
         celsius.addEventListener("click", e => {
             //fahr.classList.toggle("checked");
-            var html = `<p>Forecast for ${json.name}.</p>
+            var html3 = `<p>Forecast for ${json.name}.</p>
                         <p>Humidity is at ${json.main.humidity}%</p>
                         <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C </p>
                         <p>Conditions: ${json.weather[0].description}</p>`;
             info.classList.add("weather-desc");
-            fahr.insertAdjacentElement("beforebegin", html);
+            fahr.insertAdjacentElement("beforebegin", html3);
         });
     } else {
         error.innerHTML = "Something went wrong when fetching data!";
