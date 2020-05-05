@@ -23,7 +23,7 @@ body {
 .weather-container {
     background: #3399ff;
     border: 2px solid black;
-    height: 525px;
+    height: 80%;
     width: 80%;
     border-radius: 10px;
     box-shadow: 2px 4px 16px 0 rgba(0,0,0,0.5);
