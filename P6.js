@@ -93,13 +93,12 @@ async function getCityWeather(cityId) {
         //pulls the data from the json and parses into a readable context
         var html = `<p>Forecast for ${json.name}.</p>
                     <p>Humidity is at ${json.main.humidity}%</p>
-                    <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F &nbsp;
-                    <input type="radio" id="fahr" name="fahr" value="°F">
+                    <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
+                    <p>Conditions: ${json.weather[0].description}</p><br>
+                    <input type="radio" id="fahr" name="temp" value="°F" checked="true">
                     <label for="fahr">°F</label>
-                    <input type="radio" id="cel" name="cel" value="°C">
-                    <label for="cel">°C</label>
-                    </p>
-                    <p>Conditions: ${json.weather[0].description}</p>`;
+                    <input type="radio" id="cel" name="temp" value="°C">
+                    <label for="cel">°C</label>`;
         info.classList.add("weather-desc");
         info.innerHTML = html;
         var fahr = document.querySelector('#fahr');
@@ -109,30 +108,20 @@ async function getCityWeather(cityId) {
             //celsius.classList.toggle("checked");
             var html = `<p>Forecast for ${json.name}.</p>
                             <p>Humidity is at ${json.main.humidity}%</p>
-                            <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F &nbsp;
-                            <input type="radio" id="fahr" name="temp" value="°F" checked="true">
-                            <label for="fahr">°F</label>
-                            <input type="radio" id="cel" name="temp" value="°C">
-                            <label for="cel">°C</label>
-                            </p>
+                            <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
                             <p>Conditions: ${json.weather[0].description}</p>`;
                 info.classList.add("weather-desc");
-                info.innerHTML = html;
+                fahr.insertAdjacentElement("before", html);
         });
 
         celsius.addEventListener("click", e => {
             //fahr.classList.toggle("checked");
             var html = `<p>Forecast for ${json.name}.</p>
                             <p>Humidity is at ${json.main.humidity}%</p>
-                            <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C &nbsp;
-                            <input type="radio" id="fahr" name="fahr" value="°F" >
-                            <label for="fahr">°F</label>
-                            <input type="radio" id="cel" name="cel" value="°C" checked="true">
-                            <label for="cel">°C</label>
-                            </p>
+                            <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C </p>
                             <p>Conditions: ${json.weather[0].description}</p>`;
                 info.classList.add("weather-desc");
-                info.innerHTML = html;
+                fahr.insertAdjacentElement("before", html);
         });
     } else {
         error.innerHTML = "Something went wrong when fetching data!";
