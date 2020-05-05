@@ -110,9 +110,9 @@ async function getCityWeather(cityId) {
             var html = `<p>Forecast for ${json.name}.</p>
                             <p>Humidity is at ${json.main.humidity}%</p>
                             <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F &nbsp;
-                            <input type="radio" id="F" name="temp" value="°F" checked="true">
+                            <input type="radio" id="fahr" name="temp" value="°F" checked="true">
                             <label for="fahr">°F</label>
-                            <input type="radio" id="C" name="temp" value="°C">
+                            <input type="radio" id="cel" name="temp" value="°C">
                             <label for="cel">°C</label>
                             </p>
                             <p>Conditions: ${json.weather[0].description}</p>`;
@@ -125,9 +125,9 @@ async function getCityWeather(cityId) {
             var html = `<p>Forecast for ${json.name}.</p>
                             <p>Humidity is at ${json.main.humidity}%</p>
                             <p>Temperature is ${Math.round(((json.main.temp-273.15)))}°C &nbsp;
-                            <input type="radio" id="F" name="fahr" value="°F" >
+                            <input type="radio" id="fahr" name="fahr" value="°F" >
                             <label for="fahr">°F</label>
-                            <input type="radio" id="C" name="cel" value="°C" checked="true">
+                            <input type="radio" id="cel" name="cel" value="°C" checked="true">
                             <label for="cel">°C</label>
                             </p>
                             <p>Conditions: ${json.weather[0].description}</p>`;
