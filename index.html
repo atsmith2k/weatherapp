@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 6: More Weather</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/base.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+  <body>
+    <!-- from the video demo.. feel free to remove -->
+    <p class="update"></p>
+
+    <!-- content for your weather app goes here -->
+    <div class="app-container">
+      <section class="weather-container">
+          <header class="weather-header">
+              <h1>Welcome to Weather.io</h1>
+              <div>
+                  <input type="text" name="search1" class="zipcode" placeholder="Enter Zipcode" maxlength="5">
+                  <button type="submit" id="zipBtn" class="zipBtn material-icons">search</button>
+              </div>
+              <h2 style="text-align: center; margin-top: 20px;">OR</h2>
+              <div>
+                
+                <input type="text" name="search2" class="city" placeholder="Enter City">
+                <button type="submit" id="cityBtn" class="material-icons cityBtn">search</button>
+              </div>
+          </header>
+          <p class="error"></p>
+          <div class="weather-info"> 
+              <p class="info">No Weather to Display<i class="material-icons">wb_sunny</i></p>
+          </div>
+      </section>
+    </div>
+    
+    <!-- 
+      Just like in Pyton, we can use individual JS files as 'modules' 
+      However it looks a bit different.. notice how we are importing the data
+      needed here as opposed to P2 where we included a second script tag.
+      This is a lot less brittle and a more modern way to include files.
+    -->
+    <script src="P6.js" type="module"></script>
+  </body>
+</html>
