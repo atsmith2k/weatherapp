@@ -95,10 +95,10 @@ async function getCityWeather(cityId) {
                     <p>Humidity is at ${json.main.humidity}%</p>
                     <p>Temperature is ${Math.round(((json.main.temp-273.15)*1.8)+32)}°F</p>
                     <p>Conditions: ${json.weather[0].description}</p><br>`;
-        var buttons = `<input type="radio" id="fahr" name="temp" value="°F" checked="true">
+        var buttons = `<div><input type="radio" id="fahr" name="temp" value="°F" checked="true">
                         <label for="fahr">°F</label>
                         <input type="radio" id="cel" name="temp" value="°C">
-                        <label for="cel">°C</label>`;
+                        <label for="cel">°C</label></div>`;
         info.classList.add("weather-desc");
         info.innerHTML = html;
         info.insertAdjacentElement("afterend", buttons);
